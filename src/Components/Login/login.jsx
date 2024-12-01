@@ -67,7 +67,7 @@ export default function Login({ setUsuario }) {
         localStorage.setItem("datos", JSON.stringify(response.data.data));
 
         setUsuario(response.data.data);
-        navigate("/vehiculos/");
+        navigate("/Vesitantes/");
       }
     } catch (error) {
       let errores = error.response?.data?.ayuda || error.message;
