@@ -9,7 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
+
+import GroupIcon from "@mui/icons-material/Group";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -43,9 +44,7 @@ function Header() {
       <AppBar position="static" color="primary">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <DirectionsBikeIcon
-              sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-            />
+            <GroupIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
             <Typography
               variant="h6"
               noWrap
@@ -61,7 +60,7 @@ function Header() {
                 textDecoration: "none",
               }}
             >
-              Sinco-AYF
+              Citoplus S.A.S
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -94,9 +93,7 @@ function Header() {
                 }}
               ></Menu>
             </Box>
-            <DirectionsBikeIcon
-              sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-            />
+            <GroupIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
             <Typography
               variant="h5"
               noWrap

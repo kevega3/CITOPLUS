@@ -1,3 +1,4 @@
+// visitantesContext.jsx
 import React, { useEffect, createContext, useState } from "react";
 import { GetVisitantes } from "../Services/visitantes";
 
@@ -5,9 +6,10 @@ export const VisitantesContext = createContext();
 
 export const VisitantesProvider = (props) => {
   const [Visitantes, setVisitantes] = useState([]);
-  const handlerVisitantes = async () => {
+
+  const handlerVisitantes = async (body) => {
     try {
-      const { data: response } = await GetVisitantes();
+      const { data: response } = await GetVisitantes(body);
       setVisitantes(response.data);
     } catch (error) {
       console.error("Error al obtener VisitantesContext", error);
@@ -15,7 +17,8 @@ export const VisitantesProvider = (props) => {
   };
 
   useEffect(() => {
-    handlerVisitantes();
+    // Llamada inicial con un objeto vacío
+    handlerVisitantes({});
   }, []);
 
   return (

@@ -2,8 +2,8 @@ import axios from "axios";
 
 axios.interceptors.request.use(
   (config) => {
-    config.baseURL = "http://127.0.0.1:1880/Citoplus/"; // api Node-red Node.js
-    // config.baseURL = "http://localhost:5030/api/"; // api Node-red Node.js
+    // config.baseURL = "http://127.0.0.1:1880/Citoplus/"; // api Node-red Node-red
+    config.baseURL = "http://localhost:3000/Citoplus/"; // api Node-red Node.js
     return config;
   },
   (error) => {

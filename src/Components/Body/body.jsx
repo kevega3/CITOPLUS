@@ -15,7 +15,7 @@ import Visitantes from "../Visitantes/visitantes";
 // import Reportes from "../Reportes/reportes";
 import PlaylistAddCircleIcon from "@mui/icons-material/PlaylistAddCircle";
 import AssessmentIcon from "@mui/icons-material/Assessment";
-import Login from "../Login/login";
+// import Login from "../Login/login";
 
 const DashboardContent = () => (
   <Box sx={{ p: 3 }}>
@@ -143,22 +143,18 @@ function Body(props) {
 
   return (
     <>
-      {Usuario ? (
-        <AppProvider
-          navigation={NAVIGATION}
-          router={router}
-          theme={demoTheme}
-          window={demoWindow}
+      <AppProvider
+        navigation={NAVIGATION}
+        router={router}
+        theme={demoTheme}
+        window={demoWindow}
+      >
+        <DashboardLayout
+          slots={{ toolbarActions: Search, sidebarFooter: SidebarFooter }}
         >
-          <DashboardLayout
-            slots={{ toolbarActions: Search, sidebarFooter: SidebarFooter }}
-          >
-            <DemoPageContent pathname={router.pathname} />
-          </DashboardLayout>
-        </AppProvider>
-      ) : (
-        <Login setUsuario={setUsuario} />
-      )}
+          <DemoPageContent pathname={router.pathname} />
+        </DashboardLayout>
+      </AppProvider>
     </>
   );
 }
